@@ -4,6 +4,12 @@ from cvlib.object_detection import draw_bbox
 import cv2
 import time
 
+# TODO
+# 인화성 물질
+# 고양이 멍멍이
+# 우선순위 - 위험도 (인간 가중치)
+# 물건 대비 위험도
+
 # 웹캠 열기
 webcam = cv2.VideoCapture(0)
 if not webcam.isOpened():
