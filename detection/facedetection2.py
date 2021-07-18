@@ -2,10 +2,10 @@
 import cvlib as cv
 from cvlib.object_detection import draw_bbox
 import cv2
+import time
 
-# open webcam (웹캠 열기)
+# 웹캠 열기
 webcam = cv2.VideoCapture(0)
-
 if not webcam.isOpened():
     print("Could not open webcam")
     exit()
@@ -18,19 +18,25 @@ while webcam.isOpened():
 
     if not status:
         break
-
-    # apply object detection (물체 검출)
+    # 물체 검출
     bbox, label, conf = cv.detect_common_objects(frame)
 
-    print(bbox, label, conf)
+    # print(bbox, label, conf)
+    # print(time.time())
 
-    # draw bounding box over detected objects (검출된 물체 가장자리에 바운딩 박스 그리기)
+    # 검출된 물체 가장자리에 바운딩 박스 그리기
     out = draw_bbox(frame, bbox, label, conf, write_conf=True)
 
-    # display output
+    num = 0
+    for item in label:
+        if item == "person":
+            num+=1
+    print(num)
+
+    # 디스플레이
     cv2.imshow("Real-time object detection", out)
 
-    # press "Q" to stop
+    # Q 누르면 정지
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
