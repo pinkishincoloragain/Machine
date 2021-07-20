@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from urllib.request import urlopen
 
-url = "http://121.65.177.49:8091/?action=stream"
+url = "http://121.65.177.106:8091/?action=stream"
 stream = urlopen(url)
 buffer = b''
 
@@ -18,6 +18,7 @@ while True:
         jpg = buffer[head:end+2]
         buffer = buffer[end+2:]
         img = cv2.imdecode(np.frombuffer(jpg, dtype=np.uint8), cv2.IMREAD_UNCHANGED)
+        print(img)
 
         img = cv2.flip(img,1)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
