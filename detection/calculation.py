@@ -8,6 +8,7 @@
 def flammable():
     items = ['person','bicycle','firehydrant','bench','bird','cat','dog','cow','elephant','backpack','umbrella','handbag','tie','suitcase','frisbee','sportsball','kite','baseballbat','baseballglove','skateboard','tennisracket','bottle','wineglass','cup','fork','knife','spoon','bowl','banana','apple','sandwich','orange','broccoli','carrot','hotdog','pizza','donut','cake','chair','sofa','pottedplant','bed','diningtable','tvmonitor','laptop','mouse','remote','keyboard','cellphone','microwave','oven','toaster','sink','refrigerator','book','clock','vase','scissors','teddybear','hairdrier','toothbrush']
 
+
 # bicycle	3
 # bench	5
 # backpack	8
@@ -68,7 +69,7 @@ def flammable():
 # cat
 # dog
 # cow
-# elephant		
+# elephant
 
 def importance():
 
