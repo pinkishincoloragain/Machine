@@ -32,18 +32,34 @@ class Calc:
         return score
 
     def test(self, case_num):
+        import random
+
+        flammable = list(Calc.flammable_items.keys())
+        important = list(Calc.important_items.keys())
+        flame_list = []
+        imp_list = []
+
+        for i in range(case_num):
+            print("Flammable items: ",end="")
+            for j in range(random.randint(0,len(flammable)-1)):
+                rand_item = flammable[random.randint(0, len(flammable)-1)]
+                print(rand_item, end=", ")
+                flame_list.append(rand_item)
+            print("\nImportant items: ",end="")
+            for j in range(random.randint(0,len(important)-1)):
+                rand_item = important[random.randint(0, len(important)-1)]
+                print(rand_item, end=", ")
+                imp_list.append(rand_item)
+
+            print(f"\n\nFlammable score : {Calc.flame_score(0,flame_list)}",end="")
+            print(f"\nImportance score : {Calc.importance_score(0,imp_list)}\n")
 
 
 if __name__ == "__main__":
-    import random
+    import sys
+    print("Input test case num : ",end="")
+    test_case_num = int(sys.stdin.readline())
 
-    temp = list(Calc.flammable_items.keys())
+    Calc.test(0,test_case_num)
 
-    item_list = []
-    for i in range(10):
-        rand_item =temp[random.randint(0,len(temp)-1)]
-        print(rand_item, end=", ")
-        item_list.append(rand_item)
 
-    print()
-    print(Calc.flame_score(0,item_list))

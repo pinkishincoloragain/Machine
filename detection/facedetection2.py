@@ -31,10 +31,8 @@ async def connect():
     async with websockets.connect("ws://210.204.38.78:8080/python") as websocket:
         flame = Calc()
         while webcam.isOpened():
-
             # read frame from webcam
             status, frame = webcam.read()
-
             if not status:
                 break
             # 물체 검출
