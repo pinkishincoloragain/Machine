@@ -4,6 +4,7 @@ import asyncio
 import websockets
 from cvlib.object_detection import draw_bbox
 import cv2
+from calculation import Calc
 
 # TODO
 # 인화성 물질
@@ -28,6 +29,7 @@ if not webcam.isOpened():
 async def connect():
     # 웹 소켓에 접속
     async with websockets.connect("ws://210.204.38.78:8080/python") as websocket:
+        flame = Calc()
         while webcam.isOpened():
 
             # read frame from webcam
@@ -44,13 +46,19 @@ async def connect():
             # 검출된 물체 가장자리에 바운딩 박스 그리기
             out = draw_bbox(frame, bbox, label, conf, write_conf=True)
 
-            num = 0
+            person_num = 0
+
+            all_items = []
             for item in label:
                 if item == "person":
-                    num += 1
-            #print(num)
+                    person_num += 1
+                all_items.append(item)
 
-            await websocket.send(str(num))
+            print(f"number of people : {person_num}")
+            print(f"Flammable score : {flame.flame_score(all_items)}")
+            print(f"Importance score : {flame.flame_score(all_items)}")
+
+            await websocket.send(str(person_num))
 
             data = await websocket.recv()
 
