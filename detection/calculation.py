@@ -40,6 +40,8 @@ class Calc:
         imp_list = []
 
         for i in range(case_num):
+            flame_list = []
+            imp_list = []
             print("Flammable items: ",end="")
             for j in range(random.randint(0,len(flammable)-1)):
                 rand_item = flammable[random.randint(0, len(flammable)-1)]
