@@ -17,7 +17,7 @@ import asyncio
 # 비동기로 서버에 접속
 async def connect():
     async with websockets.connect("ws://210.204.38.78:8080/python") as websocket:
-        url = "http://121.65.177.106:8091/?action=stream"
+        url = "https://121.65.177.244:8091/?action=stream"
         stream = urlopen(url)
         buffer = b''
 
@@ -57,7 +57,7 @@ async def connect():
                 print(data)
 
                 # 디스플레이
-                # cv2.imshow("Real-time object detection", out)
+                cv2.imshow("Real-time object detection", out)
 
             # Q 누르면 정지
             if cv2.waitKey(1) & 0xFF == ord('q'):

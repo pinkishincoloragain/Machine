@@ -29,7 +29,6 @@ if not webcam.isOpened():
 async def connect():
     # 웹 소켓에 접속
     async with websockets.connect("ws://210.204.38.78:8080/python") as websocket:
-        flame = Calc()
         while webcam.isOpened():
             # read frame from webcam
             status, frame = webcam.read()
@@ -52,9 +51,8 @@ async def connect():
                     person_num += 1
                 all_items.append(item)
 
-            print(f"number of people : {person_num}")
-            print(f"Flammable score : {flame.flame_score(all_items)}")
-            print(f"Importance score : {flame.flame_score(all_items)}")
+            print(f"number of people : {person_num}", end=" ")
+            print(f"Flammable score : {Calc.flame_score(all_items)}")
 
             await websocket.send(str(person_num))
 

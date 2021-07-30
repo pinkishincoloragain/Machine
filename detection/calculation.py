@@ -23,7 +23,7 @@ class Calc:
 
         for item in all_items:
             score += Calc.flammable_items[item]
-        return score
+        return score / len(all_items)
 
     def importance_score(self,all_items):
         score = 0
