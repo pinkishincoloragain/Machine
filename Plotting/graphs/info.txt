@@ -1,0 +1,95 @@
+사용 주소
+
+1. Kyungpook Nat'l University IT-5 = (35.889506440002044, 128.6130623093732) 
+# 대구광역시 북구 산격동 대학로 80 # 80, Daehak-ro, Buk-gu, Daegu, Republic of Korea	
+
+2. Megabox Daegu  = (35.88526347527548, 128.5895286736175) 
+# 대구광역시 북구 칠성동 침산로 93 # 93, Chimsan-ro, Buk-gu, Daegu, Republic of Korea	
+
+3. Kwak's hospital = (35.87074564700752, 128.58868517110145) 
+# 대구광역시 중구 국채보상로 531 (수동, 곽병원) # 531, Gukchaebosang-ro, Jung-gu, Daegu, Republic of Korea
+
+4. Daegu train station = (35.87603675777349, 128.59601470971617)
+# 대구광역시 칠성동 # Chilseongsijang-ro, Buk-gu, Daegu, Republic of Korea
+
+5. Myungbin Son's house = (35.87808302232432, 128.61735546048672)
+# 대구광역시 동구 송라로28길 14 (신암동, 이안동대구) # 14, Songna-ro 28-gil, Dong-gu, Daegu, Republic of Korea
+
+6. Kyungpook Nat'l University Global Plaza = (35.89199093658446, 128.61113273604283)
+ # 대구광역시 북구 복현1동 대학로 # 80, Daehak-ro, Buk-gu, Daegu, Republic of Korea
+
+7. Daegu Creative Economy Innovation Center = (35.883146428195865, 128.5958043790588)
+ # 대구광역시 북구 호암로 51 # 51, Hoam-ro, Buk-gu, Daegu, Republic of Korea
+
+----------------------------------------------------------------------------------------------------
+
+8. Christ University library = (12.933482180146514, 77.6065467376655) 
+# Hosur Rd, Bhavani Nagar, S.G. Palya, Bengaluru, Karnataka 560029, India
+
+9. LG Soft India Private Limited = (12.936333004919122, 77.69448398230736) 
+# Embassy Tech Square ಎಂಬೆಸಿ ಟೆಕ್ ಸ್ಕ್ವೇರ್, Cessna Business Park Internal Rd, Kaverappa Layout, Kadubeesanahalli, Marathahalli, Bengaluru, Karnataka 560103, India
+(주소 저렇게 적혀 있더라.)
+
+10. Vasavi hospital = (12.903094760353206, 77.56061601839158) 
+# 15, 1st Stage, Opp. to 15E Bus Stop, 70th Cross Rd, Kumaraswamy Layout, Bengaluru, Karnataka 560078, India
+
+11. HAL Airport= (12.949627841189116, 77.66551818775578) 
+# WMX8+W6C, HAL Airport Area, HAL, Bengaluru, Karnataka 560017, India
+
+
+
+그림 설명 - 
+
+라벨링한 건물 : 
+   'amenity':['fuel','bar','cafe','food_court','pub','restaurant', 'biergarten','fast_food',
+                 'ice_cream','driving_school','library','bicycle_rental','bicycle_repair_station',
+                 'car_rental','car_wash','charging_station','motorcycle_parking','parking',
+                 'taxi','clinic','pharmacy','arts_centre','casino','nightclub','public_bookcase',
+                 'stripclub','studio','swingerclub','theatre','internet_cafe','baking_oven',
+                 'recycling','sanitary_dump_station','waste_transfer_station',
+                 'bbq','townhall','prison'],
+
+추가 라벨링 : 모든 길 + 토지사용방법 + 여가/스포츠 시설 + 사무실 + 그 외 자질구레한 빌딩들
+
+
+
+N-1 그래프 : 빨간점이 불난 지점임. 아무 것도 없는 곳이 출발점
+
+N-2 그래프 : 색깔로 불 날 위험이 있는 장소 구분 
+
+불 날 위험도 구분 
+(안전)밝은초록 ((불 안나거나 아주 낮음)) < 연두 < 초록 < 찐초록 ((안전 영역)) << 노랑 < 분홍 < 빨강 < 검정
+
+밝은초록 - 초록 구간 - 보통 운동하는 시설이나 잔디나 운동장이나 뭐.. 안전한 느낌이지 않을까
+
+노랑-주황 : 보통 그냥 건물 (사실 애매함. 차이 많이 남.)
+
+빨강 : 꽤 위험한 곳이라고 하긴 하지만 사실 큰 차이 없음
+
+검정 :  저장소, 가스탱크, 공장, 공사중
+
+
+중간중간에 찍힌 빨강 점들은 fireproof 안된 작은 상점들..
+
+중요한 건물인데 측정불가 : 파란색 섞임
+내가 가진 데이터에 건물 등록이 안 돼서 측정불가 : 흰색
+길 : 흰색
+
+(근데 사실 데이터 너무 박살나서 그래프마다 분류 가라로 한 거 많음.)
+
+
+퇴근
+명-바
+
+
+
+
+
+
+
+
+
+
+
+
+
