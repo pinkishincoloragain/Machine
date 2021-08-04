@@ -9,12 +9,10 @@ class Calc:
                        'skateboard': 6, 'tennis racket': 5, 'bottle': 3, 'wine glass': 1, 'cup': 4, 'fork': 2,
                        'knife': 1, 'spoon': 2, 'bowl': 2, 'banana': 3, 'apple': 3, 'sandwich': 3, 'orange': 3,
                        'broccoli': 3, 'carrot': 3, 'hot dog': 3, 'pizza': 3, 'donut': 3, 'cake': 3, 'chair': 5,
-                       'sofa': 7, 'pottedplant': 3, 'bed': 9, 'diningtable': 5, 'tvmonitor': 7, 'laptop': 7, 'mouse': 7,
+                       'sofa': 7, 'pottedplant': 3, 'bed': 9, 'diningtable': 5, 'tv': 7, 'laptop': 7, 'mouse': 7,
                        'remote': 7, 'keyboard': 7, 'cell phone': 7, 'microwave': 7, 'oven': 7, 'toaster': 7, 'sink': 1,
                        'refrigerator': 7, 'book': 10, 'clock': 5, 'vase': 1, 'scissors': 1, 'teddy bear': 10,
-                       'hair drier': 7, 'toothbrush': 5}
-
-    important_items = {'person': 10, 'bird': 8, 'cat': 9, 'dog': 9, 'cow': 9, 'elephant': 8}
+                       'hair drier': 7, 'toothbrush': 5, 'person': 30, 'bird': 20, 'cat': 25, 'dog': 25, 'cow': 25, 'elephant': 25}
 
     fh = {'fire hydrant': -100}
 
@@ -23,7 +21,11 @@ class Calc:
 
         for item in all_items:
             score += Calc.flammable_items[item]
-        return score / len(all_items)
+
+        if len(all_items) == 0:
+            return 0
+        else:
+            return score / len(all_items)
 
     def importance_score(self,all_items):
         score = 0

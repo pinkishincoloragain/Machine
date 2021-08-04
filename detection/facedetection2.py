@@ -6,6 +6,9 @@ from cvlib.object_detection import draw_bbox
 import cv2
 from calculation import Calc
 
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
+
 # TODO
 # 인화성 물질
 # 고양이 멍멍이
@@ -28,7 +31,7 @@ if not webcam.isOpened():
 # 비동기로 서버에 접속
 async def connect():
     # 웹 소켓에 접속
-    async with websockets.connect("ws://210.204.38.78:8080/python") as websocket:
+    async with websockets.connect("ws://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/ws") as websocket:
         while webcam.isOpened():
             # read frame from webcam
             status, frame = webcam.read()
@@ -51,10 +54,10 @@ async def connect():
                     person_num += 1
                 all_items.append(item)
 
-            print(f"number of people : {person_num}", end=" ")
-            print(f"Flammable score : {Calc.flame_score(all_items)}")
+            # print(f"number of people : {person_num}", end=" ")
+            # print(f"Flammable score : {Calc.flame_score(0,all_items)}")
 
-            await websocket.send(str(person_num))
+            await websocket.send(str(person_num) + " " + str(Calc.flame_score(0, all_items)))
 
             data = await websocket.recv()
 
